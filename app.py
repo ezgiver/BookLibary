@@ -5,7 +5,7 @@ from sqlalchemy import Integer, String, Float, ForeignKey
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, FloatField, PasswordField
 from wtforms.validators import DataRequired, NumberRange, Email, Length
-from flask_bootstrap import Bootstrap4
+from flask_bootstrap import Bootstrap5
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -35,7 +35,7 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-i
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', "sqlite:///new-books-collection.db")
 
 # Initialize Flask-Bootstrap
-Bootstrap4(app)
+Bootstrap5(app)
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 

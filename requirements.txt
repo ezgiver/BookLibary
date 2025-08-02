@@ -1,10 +1,10 @@
-Flask==3.0.0
-flask_sqlalchemy==3.1.1
+Flask==2.3.3
+flask_sqlalchemy==3.0.5
 SQLAlchemy==2.0.36
-Flask-Bootstrap4==4.0.2
+Bootstrap-Flask==2.2.0
 Flask-WTF==1.1.1
 WTForms==3.0.1
 Flask-Login==0.6.3
-Werkzeug==3.0.1
+Werkzeug==2.3.7
 email_validator==2.1.0
 gunicorn==21.2.0
