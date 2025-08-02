@@ -7,3 +7,4 @@ WTForms==3.0.1
 Flask-Login==0.6.3
 Werkzeug==3.0.1
 email_validator==2.1.0
+gunicorn==21.2.0

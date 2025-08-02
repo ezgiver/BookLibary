@@ -28,9 +28,11 @@ class Base(DeclarativeBase):
     pass
 
 
+import os
+
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'test'
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///new-books-collection.db"
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', "sqlite:///new-books-collection.db")
 
 # Initialize Flask-Bootstrap
 Bootstrap4(app)
