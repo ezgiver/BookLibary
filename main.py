@@ -131,6 +131,22 @@ def logout():
       logout_user()
       return redirect(url_for('login'))
 
+@app.route("/admin")
+@login_required
+def admin():
+    # Only allow the first registered user (admin) to access this page
+    with app.app_context():
+        first_user = db.session.execute(db.select(User).order_by(User.id)).first()
+        
+        if not first_user or current_user.id != first_user[0].id:
+            flash('Access denied. Admin only.')
+            return redirect(url_for('home'))
+        
+        all_users = db.session.execute(db.select(User)).scalars().all()
+        all_books = db.session.execute(db.select(Book)).scalars().all()
+    
+    return render_template('admin.html', users=all_users, books=all_books)
+
 
 @app.route('/')
 def home():
