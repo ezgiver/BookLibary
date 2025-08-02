@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% from 'bootstrap4/form.html' import render_form %}
+
+{% block title %} Add a new book {% endblock %}
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h3 class="mb-0">
+                        <i class="bi bi-book-half me-2"></i>Add a New Book
+                    </h3>
+                </div>
+                <div class="card-body">
+                    {{ render_form(form) }}
+                </div>
+            </div>
+            <div class="mt-3">
+                <a href="{{ url_for('home') }}" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left me-2"></i>Back to Library
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
